@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kopikaaa modern portfóliója frontend, webdesign és SeeMTA rendszerekhez.">
+    <title>Kopikaaa</title>
+
+    <script>
+        (() => {
+            let savedTheme = null;
+            try {
+                savedTheme = localStorage.getItem("kopikaaa-theme");
+            } catch (error) {
+                savedTheme = null;
+            }
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Kopikaaa kezdőlap">KOPIKAAA</a>
+
+    <div class="header-actions">
+        <nav class="nav-links" data-nav>
+            <a href="#about">Rólam</a>
+            <a href="#projects">Projektek</a>
+            <a href="#skills">Stack</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-label="Sötét mód bekapcsolása" aria-pressed="false" data-theme-toggle>
+            <span class="theme-toggle-icon" aria-hidden="true"></span>
+            <span data-theme-label>Sötét</span>
+        </button>
+
+        <button class="nav-toggle" type="button" aria-label="Menü megnyitása" aria-expanded="false" data-nav-toggle>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-media" src="assets/portfolio-hero.png" alt="" decoding="async">
+        <div class="hero-shade"></div>
+
+        <div class="hero-content" data-reveal>
+            <p class="eyebrow">Frontend Developer • Web Designer</p>
+            <h1 id="hero-title">Modern weboldalak, átlátható kód</h1>
+            <p class="hero-copy">
+                Koppány vagyok, frontend fejlesztéssel, reszponzív weboldalakkal foglalkozom.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#projects">Projektjeim <span aria-hidden="true">↗</span></a>
+                <a class="btn btn-secondary" href="#contact">Kapcsolat</a>
+            </div>
+
+            <div class="hero-stats" aria-label="Gyors áttekintés">
+                <div>
+                    <strong>3+</strong>
+                    <span>kiemelt projekt</span>
+                </div>
+                <div>
+                    <strong>100%</strong>
+                    <span>reszponzív szemlélet</span>
+                </div>
+                <div>
+                    <strong>UI</strong>
+                    <span>letisztult rendszerben</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-band" aria-label="Fókuszterületek">
+        <div>
+            <span>01</span>
+            <p>Frontend oldalak HTML, CSS és JavaScript alapon.</p>
+        </div>
+        <div>
+            <span>02</span>
+            <p>Kalkulátorok, jelentésírók és egyedi webes rendszerek.</p>
+        </div>
+        <div>
+            <span>03</span>
+            <p>Pc-n és telefonon is igényes megjelenés.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <div class="section-heading" data-reveal>
+            <p class="section-kicker">Rólam</p>
+            <h2>Felhasználható dizájnt és működő kódot rakok össze.</h2>
+        </div>
+
+        <div class="about-layout">
+            <div class="about-copy" data-reveal>
+                <p>
+                    Nem csak látványos oldalt készítek, hanem olyan felületet, ami átlátható, és könnyen bővíthető.
+                    A célom, hogy egy projektnek már az első betöltésnél legyen karaktere, közben pedig minden gomb, kártya
+                    és szöveg pontosan a helyén legyen.
+                </p>
+            </div>
+
+            <ul class="focus-list" data-reveal>
+                <li>
+                    <span>Design</span>
+                    <strong>modern, tiszta vizuális irány</strong>
+                </li>
+                <li>
+                    <span>Code</span>
+                    <strong>átlátható HTML, CSS és JS</strong>
+                </li>
+                <li>
+                    <span>Flow</span>
+                    <strong>mobilon és desktopon is kényelmes élmény</strong>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+        <div class="section-heading" data-reveal>
+            <p class="section-kicker">Projektjeim</p>
+            <h2>Kiemelt munkák, amelyek használatra kész felületekre épülnek.</h2>
+        </div>
+
+        <div class="project-grid">
+            <a href="https://parkolasfelugyelet.org/" target="_blank" rel="noopener noreferrer" class="project-card" data-reveal>
+                <div class="project-preview preview-parking" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="project-content">
+                    <p class="project-type">Jelentésíró</p>
+                    <h3>Parkolás Felügyelet</h3>
+                    <p>Jelentésíró a SeeMTA v2 Parkolás Felügyelet számára.</p>
+                    <span class="project-link">Megnyitás ↗</span>
+                </div>
+            </a>
+
+            <a href="https://drivexapp-seemtav2.com/" target="_blank" rel="noopener noreferrer" class="project-card" data-reveal>
+                <div class="project-preview preview-drivex" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="project-content">
+                    <p class="project-type">Jelentésíró</p>
+                    <h3>DriveX App</h3>
+                    <p>Jelentésíró a SeeMTA v2 DriveX számára.</p>
+                    <span class="project-link">Megnyitás ↗</span>
+                </div>
+            </a>
+
+            <a href="https://kopikaaa.github.io/seekisokos/seev2.html" target="_blank" rel="noopener noreferrer" class="project-card" data-reveal>
+                <div class="project-preview preview-kisokos" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="project-content">
+                    <p class="project-type">Segédlet</p>
+                    <h3>SeeMTA v2 Kisokos</h3>
+                    <p>Kalkulátorok, segédletek és hasznos információk egy helyen összefogva.</p>
+                    <span class="project-link">Megnyitás ↗</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="skills" class="section skills-section">
+        <div class="section-heading" data-reveal>
+            <p class="section-kicker">Stack</p>
+            <h2>Egyszerű technológiákból is lehet prémium érzetű oldalt építeni.</h2>
+        </div>
+
+        <div class="skills-layout">
+            <div class="skill-list" data-reveal>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive Design</span>
+                <span>UI/UX</span>
+                <span>GitHub</span>
+                <span>Web App</span>
+            </div>
+
+            <div class="process-list" data-reveal>
+                <div>
+                    <span>01</span>
+                    <strong>Tervezés</strong>
+                    <p>Átlátható szerkezet, erős első benyomás.</p>
+                </div>
+                <div>
+                    <span>02</span>
+                    <strong>Fejlesztés</strong>
+                    <p>Reszponzív komponensek, finom animációk.</p>
+                </div>
+                <div>
+                    <span>03</span>
+                    <strong>Finomhangolás</strong>
+                    <p>Telefonos nézet, hover állapotok, kontraszt és apró részletek ellenőrzése.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-band" data-reveal>
+        <div>
+            <p class="section-kicker">Kontakt</p>
+            <h2>Van egy ötleted vagy projekted?</h2>
+            <p>Írj rám, és összerakunk hozzá egy modern, gyors és igényes webes megoldást.</p>
+        </div>
+
+        <div class="contact-actions">
+            <a class="btn btn-secondary" href="https://discord.com/users/852876622478442506">Discord</a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <span>© 2026 Kopikaaa</span>
+    <a href="#top">Vissza az elejére</a>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
